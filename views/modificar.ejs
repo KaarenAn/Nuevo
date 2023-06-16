@@ -1,0 +1,43 @@
+<%- include ('layouts/header.ejs')-%>
+<% if (Libros) { %>
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-7">
+
+    </div>
+    <div class="col-md-5">
+      <div class="card">
+        <div class="card border-secondary">
+          <div class="card-header">Nuevo registro</div>
+          <form action="/edit" method="POST">
+            <input id="ID" name="ID" value="<%= Libros.ID %>">
+            <div class="form-group">
+              <label for="user" class="form-label">Nombre</label>
+              <input type="text" name="nombre" id="nombre" value="<%= Libros.nombre %>" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="user" class="form-label">Imagen</label>
+              <input type="text" name="imagen" id="imagen" value="<%= Libros.imagen %>" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="user" class="form-label">Descripcion</label>
+              <input type="text" name="descripcion" id="descripcion" value="<%= Libros.descripcion %>" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="user" class="form-label">Precio</label>
+              <input type="text" name="precio" id="precio" value="<%= Libros.precio %>" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Guardar</button>
+            <a href="/" class="btn btn-secondary">Cancelar</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% } %>
+  <%- include ('layouts/footer.ejs')-%>
+
+
+
+

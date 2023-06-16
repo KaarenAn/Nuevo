@@ -1,0 +1,36 @@
+<%- include ('layouts/header.ejs')-%>
+    <div class="container">
+    <h1><%= title %></h1>
+    <table class="table">
+      <thead>
+        <tr class="bg-primary text-white">
+          <th scope="col">ID</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Imagen</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col">Precio</th>
+        </tr>
+      </thead>
+    <!-- Embeber el codigo mysql-->
+    <% for(var i = 0; i<Libros.length; i++){ %>
+      <tbody>
+            <tr>
+              <th><%= Libros[i].ID %></th>
+              <td><%= Libros[i].nombre %></td>
+              <td><img src="<%= Libros[i].imagen %>" alt="" height="100px"></td>
+              <td><%= Libros[i].descripcion %></td>
+              <td><%= Libros[i].precio %></td>
+              <td>
+                <a href="/modificar/<%= Libros[i].ID %>" class="btn btn-outline-success">Modificar</a>
+                <a href="/borrar/<%= Libros[i].ID %>" class="btn btn-outline-success">Borrar</a>
+              </td>
+            </tr>
+          </tbody>
+          <% } %>
+        </table>
+
+    <a href="/" class="btn btn-primary"></a>
+  </div>
+  
+  <%- include ('layouts/footer.ejs')-%>
+  
